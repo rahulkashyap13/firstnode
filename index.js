@@ -11,7 +11,32 @@ app.get('/',(req,res) => {
 		msg: 'welcome to world'
 	})
 })
-const root = {};
+const root = {
+	hello: () => 'Hello welcome to Node Js',
+	hn: () => 'Hello welcome to Node Js',
+	abc: () => 'Hello welcome to Node Js',
+	item: () => {
+		return {
+			id: 12,
+			name: 'rahul'
+		}
+	},
+	user: () => {
+		return {
+			firstName: 'Rahul',
+			lastName: 'Kashyap',
+			emails: [
+				{
+					email: 'rahulk.chapter247@gmail.com'
+				},
+				{
+					email: 'rahulk1.chapter247@gmail.com'
+				}
+			] 
+		}
+	}
+
+};
 app.use('/graphql', graphlHTTP({
 	schema: schema,
 	rootValue: root,
